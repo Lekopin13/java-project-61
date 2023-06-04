@@ -10,7 +10,8 @@ public class EvenGame {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         int rightAnswers = 0;
-        while (rightAnswers != 3) {
+        int winCondition = 3;
+        while (rightAnswers != winCondition) {
             int randomNumber = (int) Math.round(Math.random() * 100);
             System.out.println("Question: " + randomNumber);
             System.out.println("Your answer: ");
@@ -24,7 +25,7 @@ public class EvenGame {
             } else {
                 System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was 'no'.");
                 System.out.println("Let's try again, " + userName);
-                rightAnswers = rightAnswers + 0;
+                rightAnswers = 0;
             }
         }
     }
