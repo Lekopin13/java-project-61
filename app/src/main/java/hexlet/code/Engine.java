@@ -2,6 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.Calc;
 import hexlet.code.games.EvenGame;
+import hexlet.code.games.GCD;
 
 import java.util.Scanner;
 
@@ -22,6 +23,10 @@ public class Engine {
         } else if (choice.equals("3")) {
             System.out.println(Cli.greeting(userName));
             Calc.startGame(userName);
+            System.out.println("Congratulations, " + userName + "!");
+        } else if (choice.equals("4")) {
+            System.out.println(Cli.greeting(userName));
+            GCD.startGame(userName);
             System.out.println("Congratulations, " + userName + "!");
         }
 
