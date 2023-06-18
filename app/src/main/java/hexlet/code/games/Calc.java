@@ -33,8 +33,25 @@ public class Calc {
                 System.out.println("Correct!");
                 rightAnswers++;
             } else {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was 'no'.");
-                System.out.println("Let's try again, " + userName);
+                if (index == 0) {
+                    int rightNumber = (randomFirstNumber + randomSecondNumber);
+                    System.out.println(new StringBuilder().append("'").append(answer).append("'")
+                            .append(" is wrong answer ;(. Correct answer was ")
+                            .append("'").append(rightNumber).append("'").append(".").toString());
+                    System.out.println("Let's try again, " + userName);
+                } else if (index == 1) {
+                    int rightNumber = (randomFirstNumber - randomSecondNumber);
+                    System.out.println(new StringBuilder().append("'").append(answer).append("'")
+                            .append(" is wrong answer ;(. Correct answer was ")
+                            .append("'").append(rightNumber).append("'").append(".").toString());
+                    System.out.println("Let's try again, " + userName);
+                } else {
+                    int rightNumber = (randomFirstNumber * randomSecondNumber);
+                    System.out.println(new StringBuilder().append("'").append(answer).append("'")
+                            .append(" is wrong answer ;(. Correct answer was ")
+                            .append("'").append(rightNumber).append("'").append(".").toString());
+                    System.out.println("Let's try again, " + userName);
+                }
                 rightAnswers = 0;
             }
         }
