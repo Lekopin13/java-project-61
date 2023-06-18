@@ -14,8 +14,9 @@ public class Calc {
         int winCondition = 3;
         final String[] operators = {"+", "-", "*"};
         while (rightAnswers != winCondition) {
-            int randomFirstNumber = (int) Math.round(Math.random() * 100);
-            int randomSecondNumber = (int) Math.round(Math.random() * 100);
+            int randomToInt = 100;
+            int randomFirstNumber = (int) Math.round(Math.random() * randomToInt);
+            int randomSecondNumber = (int) Math.round(Math.random() * randomToInt);
             Random random = new Random();
             int index = random.nextInt(operators.length);
             System.out.println("Question: " + randomFirstNumber + operators[index] + randomSecondNumber);

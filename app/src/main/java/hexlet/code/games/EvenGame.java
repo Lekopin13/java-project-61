@@ -12,7 +12,8 @@ public class EvenGame {
         int rightAnswers = 0;
         int winCondition = 3;
         while (rightAnswers != winCondition) {
-            int randomNumber = (int) Math.round(Math.random() * 100);
+            int randomToInt = 100;
+            int randomNumber = (int) Math.round(Math.random() * randomToInt);
             System.out.println("Question: " + randomNumber);
             System.out.println("Your answer: ");
             String answer = scanner.next();
