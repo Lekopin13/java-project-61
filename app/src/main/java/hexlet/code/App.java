@@ -6,6 +6,7 @@ public class App {
         System.out.println("Please enter the game number and press Enter");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
+        System.out.println("3 - Calc");
         System.out.println("0 - Exit");
 
         Scanner scanner = new Scanner(System.in);
@@ -22,6 +23,10 @@ public class App {
         } else if (choice.equals("2")) {
             System.out.println(Cli.greeting(userName));
             EvenGame.startGame(userName);
+            System.out.println("Congratulations, " + userName + "!");
+        } else if (choice.equals("3")) {
+            System.out.println(Cli.greeting(userName));
+            Calc.startGame(userName);
             System.out.println("Congratulations, " + userName + "!");
         }
 
