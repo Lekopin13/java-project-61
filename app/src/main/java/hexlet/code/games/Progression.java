@@ -16,27 +16,35 @@ public class Progression {
             int randomToInt = 100;
             int startProgression = (int) Math.round(Math.random() * randomToInt);
             int counterOfProgression = (int) Math.round(Math.random() * randomToInt);
-            int randomNumber = (int) Math.round(Math.random() * randomToInt);
-            int min = 5;
-            int max = 10;
-            int lengthOfProgression = new Random().nextInt(max - min) + min;
+            int minLength = 5;
+            int maxLength = 10;
+            int lengthOfProgression = new Random().nextInt(maxLength - minLength) + minLength;
+            int randomNumber = new Random().nextInt(lengthOfProgression);
 
-            System.out.print("Question: ");
-            for (int i = 0; i < lengthOfProgression; i++) {
-                System.out.print(startProgression + " ");
+            int[] progressionArr = new int[lengthOfProgression];
+
+            for (int i = 0; i < progressionArr.length; i++) {
+                progressionArr[i] = startProgression;
                 startProgression = startProgression + counterOfProgression;
             }
 
+            int rightAnswer = progressionArr[randomNumber];
+            String rigthString = Integer.toString(rightAnswer);
+            String progressionString = java.util.Arrays.toString(progressionArr)
+                    .replaceAll("[\\,\\[\\]\\ ]", " ")
+                    .replaceAll(rigthString, "..");
+            System.out.println(progressionString);
+
+
             System.out.println("Your answer: ");
             String answer = scanner.next();
-            if (answer.equalsIgnoreCase("yes")) {
-                System.out.println("Correct!");
-                rightAnswers++;
-            } else if (answer.equalsIgnoreCase("no")) {
+            if (answer.equalsIgnoreCase(rigthString)) {
                 System.out.println("Correct!");
                 rightAnswers++;
             } else {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was 'no'.");
+                System.out.println(new StringBuilder().append("'").append(answer).append("'")
+                        .append(" is wrong answer ;(. Correct answer was ")
+                        .append("'").append(rigthString).append("'.").toString());
                 System.out.println("Let's try again, " + userName);
                 rightAnswers = 0;
             }
