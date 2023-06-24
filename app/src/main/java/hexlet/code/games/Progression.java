@@ -16,9 +16,10 @@ public class Progression {
             int randomToInt = 10;
             int startProgression = (int) Math.round(Math.random() * randomToInt);
             int counterOfProgression = (int) Math.round(Math.random() * randomToInt);
-            int minLength = 5;
-            int maxLength = 10;
-            int lengthOfProgression = new Random().nextInt(maxLength - minLength) + minLength;
+            //int minLength = 5; (random length)
+            //int maxLength = 10; (random length)
+            int lengthOfProgression = 10;
+                    //new Random().nextInt(maxLength - minLength) + minLength; (random length)
             int randomNumber = new Random().nextInt(lengthOfProgression);
 
             int[] progressionArr = new int[lengthOfProgression];
