@@ -34,11 +34,10 @@ public class Progression {
             int rightAnswer = progressionArr[randomNumber];
             String rigthString = Integer.toString(rightAnswer);
             String progressionString = java.util.Arrays.toString(progressionArr)
-                    .replace(rigthString, "..")
                     .replaceAll(",", "")
                     .replaceAll("]", "")
                     .replaceAll("\\[", "");
-            System.out.println("Question: " + progressionString);
+            System.out.println("Question: " + progressionString.replace(rigthString, ".."));
 
 
             System.out.println("Your answer: ");
