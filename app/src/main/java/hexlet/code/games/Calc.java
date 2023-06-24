@@ -53,7 +53,8 @@ public class Calc {
                             .append(rightNumber).append("'.").toString());
                     System.out.println("Let's try again, " + userName + "!");
                 }
-                rightAnswers = 0;
+                break;
+                //rightAnswers = 0;
             }
         }
     }

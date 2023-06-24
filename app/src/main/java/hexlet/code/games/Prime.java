@@ -47,7 +47,8 @@ public class Prime {
                     System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was 'no'.");
                     System.out.println("Let's try again, " + userName + "!");
                 }
-                rightAnswers = 0;
+                break;
+                //rightAnswers = 0;
             }
         }
     }
