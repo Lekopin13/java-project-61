@@ -16,10 +16,9 @@ public class Progression {
             int randomToInt = 10;
             int startProgression = (int) Math.round(Math.random() * randomToInt);
             int counterOfProgression = (int) Math.round(Math.random() * randomToInt);
-            //int minLength = 5; (for random length)
-            //int maxLength = 10; (for random length)
-            int lengthOfProgression = 10;
-            //new Random().nextInt(maxLength - minLength) + minLength; (random length)
+            int minLength = 5;
+            int maxLength = 10;
+            int lengthOfProgression = new Random().nextInt(maxLength - minLength) + minLength;
             int randomNumber = new Random().nextInt(lengthOfProgression);
 
             int[] progressionArr = new int[lengthOfProgression];
@@ -32,8 +31,10 @@ public class Progression {
             int rightAnswer = progressionArr[randomNumber];
             String rigthString = Integer.toString(rightAnswer);
             String progressionString = java.util.Arrays.toString(progressionArr)
-                    .replaceAll("[\\,\\[\\]\\ ]", " ")
-                    .replaceAll(rigthString, "..");
+                    .replaceAll(",", "")
+                    .replaceAll("]", "")
+                    .replaceAll("\\[", "")
+                    .replace(rigthString, "..");
             System.out.println("Question: " + progressionString);
 
 
