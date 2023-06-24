@@ -11,9 +11,11 @@ public class Calc {
         System.out.println("What is the result of the expression?");
 
         int rightAnswers = 0;
+        //noinspection CheckStyle
         int winCondition = 3;
         final String[] operators = {"+", "-", "*"};
         while (rightAnswers != winCondition) {
+            //noinspection CheckStyle
             int randomToInt = 100;
             int randomFirstNumber = (int) Math.round(Math.random() * randomToInt);
             int randomSecondNumber = (int) Math.round(Math.random() * randomToInt);

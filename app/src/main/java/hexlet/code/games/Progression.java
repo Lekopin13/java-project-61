@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Progression {
+
     public static void startGame(String userName) {
 
         Scanner scanner = new Scanner(System.in);
@@ -11,13 +12,16 @@ public class Progression {
         System.out.println("What number is missing in the progression?");
 
         int rightAnswers = 0;
+        //noinspection CheckStyle
         int winCondition = 3;
         while (rightAnswers != winCondition) {
+            //noinspection CheckStyle
             int randomToInt = 10;
             int startProgression = (int) Math.round(Math.random() * randomToInt);
             int counterOfProgression = (int) Math.round(Math.random() * randomToInt);
             //int minLength = 5; (random length)
             //int maxLength = 10; (random length)
+            //noinspection CheckStyle
             int lengthOfProgression = 10;
                     //new Random().nextInt(maxLength - minLength) + minLength; (random length)
             int randomNumber = new Random().nextInt(lengthOfProgression);
