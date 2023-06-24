@@ -19,7 +19,6 @@ public class Prime {
     }
 
     public static void startPrimeGame(String userName) {
-
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
