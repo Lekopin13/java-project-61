@@ -21,7 +21,7 @@ public class Progression {
             //int maxLength = 10; (random length)
             //noinspection CheckStyle
             final int lengthOfProgression = 10;
-                    //new Random().nextInt(maxLength - minLength) + minLength; (random length)
+            //new Random().nextInt(maxLength - minLength) + minLength; (random length)
             int randomNumber = new Random().nextInt(lengthOfProgression);
 
             int[] progressionArr = new int[lengthOfProgression];
@@ -34,10 +34,10 @@ public class Progression {
             int rightAnswer = progressionArr[randomNumber];
             String rigthString = Integer.toString(rightAnswer);
             String progressionString = java.util.Arrays.toString(progressionArr)
+                    .replace(rigthString, "..")
                     .replaceAll(",", "")
                     .replaceAll("]", "")
-                    .replaceAll("\\[", "")
-                    .replace(rigthString, "..");
+                    .replaceAll("\\[", "");
             System.out.println("Question: " + progressionString);
 
 
