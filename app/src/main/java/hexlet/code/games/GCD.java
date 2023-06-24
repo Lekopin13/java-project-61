@@ -10,9 +10,9 @@ public class GCD {
         System.out.println("Find the greatest common divisor of given numbers.");
 
         int rightAnswers = 0;
-        int winCondition = 3;
+        final int winCondition = 3;
         while (rightAnswers != winCondition) {
-            int randomToInt = 100;
+            final int randomToInt = 100;
             int randomFirstNumber = (int) Math.round(Math.random() * randomToInt);
             int randomSecondNumber = (int) Math.round(Math.random() * randomToInt);
             System.out.println("Question: " + randomFirstNumber + " " + randomSecondNumber);

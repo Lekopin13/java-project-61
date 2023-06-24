@@ -10,9 +10,9 @@ public class EvenGame {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         int rightAnswers = 0;
-        int winCondition = 3;
+        final int winCondition = 3;
         while (rightAnswers != winCondition) {
-            int randomToInt = 100;
+            final int randomToInt = 100;
             int randomNumber = (int) Math.round(Math.random() * randomToInt);
             System.out.println("Question: " + randomNumber);
             System.out.println("Your answer: ");
