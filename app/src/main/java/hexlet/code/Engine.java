@@ -1,9 +1,10 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.EvenGame;
-import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
+import hexlet.code.games.GCD;
+import hexlet.code.games.EvenGame;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Prime;
 
 import java.util.Scanner;
 
@@ -33,8 +34,11 @@ public class Engine {
             System.out.println(Cli.greeting(userName));
             Progression.startGame(userName);
             System.out.println("Congratulations, " + userName + "!");
+        } else if (choice.equals("6")) {
+            System.out.println(Cli.greeting(userName));
+            Prime.startPrimeGame(userName);
+            System.out.println("Congratulations, " + userName + "!");
         }
-
         scanner.close();
     }
 }
