@@ -41,11 +41,11 @@ public class Prime {
             } else {
                 if (isPrime(randomNumber)) {
                     System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was 'yes'.");
-                    System.out.println("Let's try again, " + userName);
+                    System.out.println("Let's try again, " + userName + "!");
                 } else {
                     String rightAnswer = "no";
                     System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was 'no'.");
-                    System.out.println("Let's try again, " + userName);
+                    System.out.println("Let's try again, " + userName + "!");
                 }
                 rightAnswers = 0;
             }

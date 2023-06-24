@@ -45,7 +45,7 @@ public class Progression {
                 System.out.println(new StringBuilder().append("'").append(answer).append("'")
                         .append(" is wrong answer ;(. Correct answer was ")
                         .append("'").append(rigthString).append("'.").toString());
-                System.out.println("Let's try again, " + userName);
+                System.out.println("Let's try again, " + userName + "!");
                 rightAnswers = 0;
             }
         }

@@ -26,10 +26,10 @@ public class EvenGame {
             } else {
                 if (randomNumber % 2 == 0) {
                     System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was 'yes'.");
-                    System.out.println("Let's try again, " + userName);
+                    System.out.println("Let's try again, " + userName + "!");
                 } else if (randomNumber % 2 != 0) {
                     System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was 'no'.");
-                    System.out.println("Let's try again, " + userName);
+                    System.out.println("Let's try again, " + userName + "!");
                 }
                 //rightAnswers = 0;
                 break;

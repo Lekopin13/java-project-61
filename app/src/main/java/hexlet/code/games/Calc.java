@@ -39,19 +39,19 @@ public class Calc {
                     System.out.println(new StringBuilder().append("'").append(answer).append("'")
                             .append(" is wrong answer ;(. Correct answer was '")
                             .append(rightNumber).append("'.").toString());
-                    System.out.println("Let's try again, " + userName);
+                    System.out.println("Let's try again, " + userName + "!");
                 } else if (index == 1) {
                     int rightNumber = (randomFirstNumber - randomSecondNumber);
                     System.out.println(new StringBuilder().append("'").append(answer).append("'")
                             .append(" is wrong answer ;(. Correct answer was '")
                             .append(rightNumber).append("'.").toString());
-                    System.out.println("Let's try again, " + userName);
+                    System.out.println("Let's try again, " + userName + "!");
                 } else {
                     int rightNumber = (randomFirstNumber * randomSecondNumber);
                     System.out.println(new StringBuilder().append("'").append(answer).append("'")
                             .append(" is wrong answer ;(. Correct answer was '")
                             .append(rightNumber).append("'.").toString());
-                    System.out.println("Let's try again, " + userName);
+                    System.out.println("Let's try again, " + userName + "!");
                 }
                 rightAnswers = 0;
             }
