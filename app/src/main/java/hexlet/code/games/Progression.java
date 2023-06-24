@@ -28,6 +28,7 @@ public class Progression {
                 startProgression = startProgression + counterOfProgression;
             }
 
+            System.out.print("Question: ");
             int rightAnswer = progressionArr[randomNumber];
             String rigthString = Integer.toString(rightAnswer);
             String progressionString = java.util.Arrays.toString(progressionArr)
