@@ -37,7 +37,7 @@ public class Progression {
                     .replaceAll(",", "")
                     .replaceAll("]", "")
                     .replaceAll("\\[", "");
-            System.out.println("Question: " + progressionString.replace(rigthString, ".."));
+            System.out.println("Question: " + progressionString.replaceFirst(rigthString, ".."));
 
 
             System.out.println("Your answer: ");
