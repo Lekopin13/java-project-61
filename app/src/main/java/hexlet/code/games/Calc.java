@@ -19,7 +19,7 @@ public class Calc {
             int randomSecondNumber = (int) Math.round(Math.random() * randomToInt);
             Random random = new Random();
             int index = random.nextInt(operators.length);
-            System.out.println("Question: " + randomFirstNumber + operators[index] + randomSecondNumber);
+            System.out.println("Question: " + randomFirstNumber + " " + operators[index] + " " + randomSecondNumber);
             System.out.println("Your answer: ");
             String answer = scanner.next();
             int answerToInteger = Integer.parseInt(answer);
