@@ -13,7 +13,7 @@ public class Progression {
         int rightAnswers = 0;
         int winCondition = 3;
         while (rightAnswers != winCondition) {
-            int randomToInt = 100;
+            int randomToInt = 10;
             int startProgression = (int) Math.round(Math.random() * randomToInt);
             int counterOfProgression = (int) Math.round(Math.random() * randomToInt);
             //int minLength = 5; (for random length)
