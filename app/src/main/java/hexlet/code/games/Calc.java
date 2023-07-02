@@ -7,6 +7,10 @@ import java.util.Scanner;
 
 public class Calc {
 
+    public static String buildQuestion(int randomFirstNumber, int randomSecondNumber, String operator) {
+        return Engine.createQuestion() + randomFirstNumber + " " + operator + " " + randomSecondNumber;
+    }
+
     public static void startGame(String userName) {
 
         Scanner scanner = new Scanner(System.in);
@@ -16,43 +20,35 @@ public class Calc {
         int rightAnswers = 0;
         final String[] operators = {"+", "-", "*"};
         while (rightAnswers != Engine.WIN_CONDITION) {
-            int randomFirstNumber = (int) Math.round(Math.random() * Engine.RANDOM_TO_INT);
-            int randomSecondNumber = (int) Math.round(Math.random() * Engine.RANDOM_TO_INT);
+            int randomFirstNumber = Engine.buildRandomNumber();
+            int randomSecondNumber = Engine.buildRandomNumber();
             Random random = new Random();
             int index = random.nextInt(operators.length);
-            System.out.println("Question: " + randomFirstNumber + " " + operators[index] + " " + randomSecondNumber);
-            System.out.println("Your answer: ");
+            System.out.println(buildQuestion(randomFirstNumber, randomSecondNumber, operators[index]));
+
+            System.out.println(Engine.createAnswer());
             String answer = scanner.next();
             int answerToInteger = Integer.parseInt(answer);
 
             if (index == 0 && answerToInteger == (randomFirstNumber + randomSecondNumber)) {
-                System.out.println("Correct!");
+                System.out.println(Engine.createCorrect());
                 rightAnswers++;
             } else if (index == 1 && answerToInteger == (randomFirstNumber - randomSecondNumber)) {
-                System.out.println("Correct!");
+                System.out.println(Engine.createCorrect());
                 rightAnswers++;
             } else if (index == 2 && answerToInteger == (randomFirstNumber * randomSecondNumber)) {
-                System.out.println("Correct!");
+                System.out.println(Engine.createCorrect());
                 rightAnswers++;
             } else {
                 if (index == 0) {
-                    int rightNumber = (randomFirstNumber + randomSecondNumber);
-                    System.out.println(new StringBuilder().append("'").append(answer).append("'")
-                            .append(" is wrong answer ;(. Correct answer was '")
-                            .append(rightNumber).append("'.").toString());
-                    System.out.println("Let's try again, " + userName + "!");
+                    int rightAnswer = (randomFirstNumber + randomSecondNumber);
+                    System.out.println(Engine.createFalse(answer, Integer.toString(rightAnswer), userName));
                 } else if (index == 1) {
-                    int rightNumber = (randomFirstNumber - randomSecondNumber);
-                    System.out.println(new StringBuilder().append("'").append(answer).append("'")
-                            .append(" is wrong answer ;(. Correct answer was '")
-                            .append(rightNumber).append("'.").toString());
-                    System.out.println("Let's try again, " + userName + "!");
+                    int rightAnswer = (randomFirstNumber - randomSecondNumber);
+                    System.out.println(Engine.createFalse(answer, Integer.toString(rightAnswer), userName));
                 } else {
-                    int rightNumber = (randomFirstNumber * randomSecondNumber);
-                    System.out.println(new StringBuilder().append("'").append(answer).append("'")
-                            .append(" is wrong answer ;(. Correct answer was '")
-                            .append(rightNumber).append("'.").toString());
-                    System.out.println("Let's try again, " + userName + "!");
+                    int rightAnswer = (randomFirstNumber * randomSecondNumber);
+                    System.out.println(Engine.createFalse(answer, Integer.toString(rightAnswer), userName));
                 }
                 break;
             }

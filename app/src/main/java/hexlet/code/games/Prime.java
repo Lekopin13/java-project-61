@@ -19,6 +19,10 @@ public class Prime {
         return true;
     }
 
+    public static String buildQuestion(int randomNumber) {
+        return Engine.createQuestion() + randomNumber;
+    }
+
     public static void startPrimeGame(String userName) {
         Scanner scanner = new Scanner(System.in);
 
@@ -27,25 +31,23 @@ public class Prime {
         int rightAnswers = 0;
         while (rightAnswers != Engine.WIN_CONDITION) {
 
-            int randomNumber = (int) Math.round(Math.random() * Engine.RANDOM_TO_INT);
-            System.out.println("Question: " + randomNumber);
+            int question = Engine.buildRandomNumber();
+            System.out.println(buildQuestion(question));
 
-            System.out.println("Your answer: ");
+            System.out.println(Engine.createAnswer());
             String answer = scanner.next();
-            if (isPrime(randomNumber) && answer.equalsIgnoreCase("yes")) {
-                System.out.println("Correct!");
+
+            if (isPrime(question) && answer.equalsIgnoreCase("yes")) {
+                System.out.println(Engine.createCorrect());
                 rightAnswers++;
-            } else if (!isPrime(randomNumber) && answer.equalsIgnoreCase("no")) {
-                System.out.println("Correct!");
+            } else if (!isPrime(question) && answer.equalsIgnoreCase("no")) {
+                System.out.println(Engine.createCorrect());
                 rightAnswers++;
             } else {
-                if (isPrime(randomNumber)) {
-                    System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was 'yes'.");
-                    System.out.println("Let's try again, " + userName + "!");
+                if (isPrime(question)) {
+                    System.out.println(Engine.createFalse(answer, "yes", userName));
                 } else {
-                    String rightAnswer = "no";
-                    System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was 'no'.");
-                    System.out.println("Let's try again, " + userName + "!");
+                    System.out.println(Engine.createFalse(answer, "no", userName));
                 }
                 break;
             }

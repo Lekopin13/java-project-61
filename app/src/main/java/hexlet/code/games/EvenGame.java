@@ -5,31 +5,38 @@ import hexlet.code.Engine;
 import java.util.Scanner;
 
 public class EvenGame {
+
+    public static boolean  isEven(int n) {
+        return n % 2 == 0;
+    }
+
+    public static String buildQuestion(int randomNumber) {
+        return Engine.createQuestion() + randomNumber;
+    }
     public static void startGame(String userName) {
-
-        Scanner scanner = new Scanner(System.in);
-
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         int rightAnswers = 0;
         while (rightAnswers != Engine.WIN_CONDITION) {
-            int randomNumber = (int) Math.round(Math.random() * Engine.RANDOM_TO_INT);
-            System.out.println("Question: " + randomNumber);
-            System.out.println("Your answer: ");
+
+            int question = Engine.buildRandomNumber();
+            System.out.println(buildQuestion(question));
+
+            Scanner scanner = new Scanner(System.in);
+            System.out.println(Engine.createAnswer());
             String answer = scanner.next();
-            if (randomNumber % 2 == 0 && answer.equalsIgnoreCase("yes")) {
-                System.out.println("Correct!");
+
+            if (isEven(question) && answer.equalsIgnoreCase("yes")) {
+                System.out.println(Engine.createCorrect());
                 rightAnswers++;
-            } else if (randomNumber % 2 != 0 && answer.equalsIgnoreCase("no")) {
-                System.out.println("Correct!");
+            } else if (!isEven(question) && answer.equalsIgnoreCase("no")) {
+                System.out.println(Engine.createCorrect());
                 rightAnswers++;
             } else {
-                if (randomNumber % 2 == 0) {
-                    System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was 'yes'.");
-                    System.out.println("Let's try again, " + userName + "!");
-                } else if (randomNumber % 2 != 0) {
-                    System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was 'no'.");
-                    System.out.println("Let's try again, " + userName + "!");
+                if (question % 2 == 0) {
+                    System.out.println(Engine.createFalse(answer, "yes", userName));
+                } else if (question % 2 != 0) {
+                    System.out.println(Engine.createFalse(answer, "no", userName));
                 }
                 break;
             }
