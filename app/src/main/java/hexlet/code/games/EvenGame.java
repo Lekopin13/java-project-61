@@ -1,5 +1,7 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Scanner;
 
 public class EvenGame {
@@ -10,10 +12,8 @@ public class EvenGame {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         int rightAnswers = 0;
-        final int winCondition = 3;
-        while (rightAnswers != winCondition) {
-            final int randomToInt = 100;
-            int randomNumber = (int) Math.round(Math.random() * randomToInt);
+        while (rightAnswers != Engine.WIN_CONDITION) {
+            int randomNumber = (int) Math.round(Math.random() * Engine.RANDOM_TO_INT);
             System.out.println("Question: " + randomNumber);
             System.out.println("Your answer: ");
             String answer = scanner.next();
@@ -31,7 +31,6 @@ public class EvenGame {
                     System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was 'no'.");
                     System.out.println("Let's try again, " + userName + "!");
                 }
-                //rightAnswers = 0;
                 break;
             }
         }

@@ -1,9 +1,10 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Scanner;
 
 public class Prime {
-
     static boolean isPrime(int n) {
         if (n <= 1) {
             return false;
@@ -24,10 +25,9 @@ public class Prime {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
         int rightAnswers = 0;
-        final int winCondition = 3;
-        while (rightAnswers != winCondition) {
-            final int randomToInt = 100;
-            int randomNumber = (int) Math.round(Math.random() * randomToInt);
+        while (rightAnswers != Engine.WIN_CONDITION) {
+
+            int randomNumber = (int) Math.round(Math.random() * Engine.RANDOM_TO_INT);
             System.out.println("Question: " + randomNumber);
 
             System.out.println("Your answer: ");
@@ -48,7 +48,6 @@ public class Prime {
                     System.out.println("Let's try again, " + userName + "!");
                 }
                 break;
-                //rightAnswers = 0;
             }
         }
     }

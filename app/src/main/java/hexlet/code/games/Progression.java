@@ -1,5 +1,7 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -12,19 +14,12 @@ public class Progression {
         System.out.println("What number is missing in the progression?");
 
         int rightAnswers = 0;
-        final int winCondition = 3;
-        while (rightAnswers != winCondition) {
-            final int randomToInt = 10;
-            int startProgression = (int) Math.round(Math.random() * randomToInt);
-            int counterOfProgression = (int) Math.round(Math.random() * randomToInt);
-            //int minLength = 5; (random length)
-            //int maxLength = 10; (random length)
-            //noinspection CheckStyle
-            final int lengthOfProgression = 10;
-            //new Random().nextInt(maxLength - minLength) + minLength; (random length)
-            int randomNumber = new Random().nextInt(lengthOfProgression);
+        while (rightAnswers != Engine.WIN_CONDITION) {
+            int startProgression = (int) Math.round(Math.random() * Engine.RANDOM_TO_INT);
+            int counterOfProgression = (int) Math.round(Math.random() * Engine.RANDOM_TO_INT);
+            int randomNumber = new Random().nextInt(Engine.LENGTH_OF_PROGRESSION);
 
-            int[] progressionArr = new int[lengthOfProgression];
+            int[] progressionArr = new int[Engine.LENGTH_OF_PROGRESSION];
 
             for (int i = 0; i < progressionArr.length; i++) {
                 progressionArr[i] = startProgression;
@@ -51,7 +46,6 @@ public class Progression {
                         .append("'").append(rigthString).append("'.").toString());
                 System.out.println("Let's try again, " + userName + "!");
                 break;
-                //rightAnswers = 0;
             }
         }
     }

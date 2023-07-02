@@ -1,9 +1,12 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Random;
 import java.util.Scanner;
 
 public class Calc {
+
     public static void startGame(String userName) {
 
         Scanner scanner = new Scanner(System.in);
@@ -11,12 +14,10 @@ public class Calc {
         System.out.println("What is the result of the expression?");
 
         int rightAnswers = 0;
-        final int winCondition = 3;
         final String[] operators = {"+", "-", "*"};
-        while (rightAnswers != winCondition) {
-            final int randomToInt = 100;
-            int randomFirstNumber = (int) Math.round(Math.random() * randomToInt);
-            int randomSecondNumber = (int) Math.round(Math.random() * randomToInt);
+        while (rightAnswers != Engine.WIN_CONDITION) {
+            int randomFirstNumber = (int) Math.round(Math.random() * Engine.RANDOM_TO_INT);
+            int randomSecondNumber = (int) Math.round(Math.random() * Engine.RANDOM_TO_INT);
             Random random = new Random();
             int index = random.nextInt(operators.length);
             System.out.println("Question: " + randomFirstNumber + " " + operators[index] + " " + randomSecondNumber);
@@ -54,7 +55,6 @@ public class Calc {
                     System.out.println("Let's try again, " + userName + "!");
                 }
                 break;
-                //rightAnswers = 0;
             }
         }
     }

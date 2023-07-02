@@ -9,6 +9,9 @@ import hexlet.code.games.Prime;
 import java.util.Scanner;
 
 public class Engine {
+    public static final int WIN_CONDITION = 3;
+    public static final int RANDOM_TO_INT = 100;
+    public static final int LENGTH_OF_PROGRESSION = 10;
     public static void gameStarter(String choice) {
         Scanner scanner = new Scanner(System.in);
 
